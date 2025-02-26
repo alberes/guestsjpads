@@ -50,21 +50,21 @@ creation_date timestamp not null
 ```
 6 - Create image of GuestApp
 ```
-Docker build --tag guestsapp:1.0.0 .
+Docker build --tag guestsjpadsapp:1.0.0 .
 ```
-7 - Run container guestsapp
+7 - Run container guestsjpadsapp
 ```
-docker run --name guestsapp -p 8080:8080 --network guests-network -e DATASOURCE_URL=jdbc:postgresql://postgresdb:5432/guests -e DATASOURCE_USER=postgres -e DATASOURCE_PASSWORD=postgres guestsapp:1.0.0
+docker run --name guestsjpadsapp -p 8080:8080 --network guests-network -e DATASOURCE_URL=jdbc:postgresql://postgresdb:5432/guests -e DATASOURCE_USER=postgres -e DATASOURCE_PASSWORD=postgres guestsapp:1.0.0
 ```
 8 - Stop docker container
 ```
 docker stop postgresdb
 docker stop pgadmin4
-docker stop guestsapp
+docker stop guestsjpadsapp
 ```
 9 - Start docker container
 ```
 docker start postgresdb
 docker start pgadmin4
-docker start guestsapp
+docker start guestsjpadsapp
 ```
