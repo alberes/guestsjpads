@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: guestsjpads
+  #  profiles:
+  #    active: production
+  # SPRING_PROFILES_ACTIVE=production
+  output:
+    ansi:
+      enabled: ALWAYS
+  datasource:
+    jpa:
+      url: jdbc:postgresql://postgresdb:5432/guests
+      username: postgres
+      password: postgres
+      driver-class-name: org.postgresql.Driver
+    dr:
+      datasourcename: guests-datasource-pool
+      url: jdbc:postgresql://postgresdb:5432/guestsdr
+      username: postgres
+      password: postgres
+      driver: org.postgresql.Driver
+      minimumIdle: 1
+      maximimPoolSize: 10
+      maxLifeTime: 600000
+      connectionTimeout: 100000
+  jpa:
+    show-sql: true
+    hibernate:
+      #      ddl-auto: update
+      ddl-auto: none
+    properties:
+      hibernate.format_sql: true
